@@ -442,7 +442,7 @@ a.learn-more .button-text {
 
 
 
-@media only screen and (min-width: 650px) {
+@media only screen and (min-width: 992px) {
     h1 {
         width: auto;
     }
