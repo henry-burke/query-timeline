@@ -63,8 +63,10 @@ const changeColor = (elementList, pastColor, futureColor, classBreak) => {
     elementList.forEach((element) => {
         if (changeColor) {
             element.style.backgroundColor = pastColor;
+            element.classList.add('before-years');
         } else {
             element.style.backgroundColor = futureColor;
+            element.classList.remove('before-years');
         } if (element.classList.contains(classBreak)) {
             changeColor = false;
         }
@@ -149,7 +151,7 @@ const reveal = () => {
     for (let i = 0; i < revealImg.length; i++) {
         let windowHeight = window.innerHeight;
         let elementTop = revealImg[i].getBoundingClientRect().top;
-        let elementVisible = 40;
+        let elementVisible = -50;
 
         if (elementTop < (windowHeight - elementVisible)) {
             revealImg[i].classList.add("active");

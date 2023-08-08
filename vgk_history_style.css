@@ -110,6 +110,10 @@ button.button-year-select {
     z-index: 1;
 }
 
+button.button-year-select.before-years {
+    color: var(--gray-color);
+}
+
 button.button-year-select.active {
     background-color: var(--gold-color);
     color: var(--gray-color);
