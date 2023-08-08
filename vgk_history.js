@@ -137,7 +137,7 @@ const autoScroll = (element, e, top) => {
     }
 
     scroll({
-        top: offsetTop,
+        top: offsetTop - 125,
         behavior: "smooth"
     });
 }
