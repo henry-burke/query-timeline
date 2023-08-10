@@ -44,9 +44,19 @@ body {
     flex-direction: column;
     align-items: center;
     background-color: var(--light-background-color);
+    background-size: cover;
+    /* background-position: center; */
 
     /* height when ad is present at bottom of page */
     /* height: calc(100vh - 125px); */
+
+    /* background-attachment: fixed; */
+
+    /* background-image: linear-gradient(to bottom, rgba(180, 151, 90, 0.75) 0%, rgba(117, 115, 107, 0.75) 33%, rgba(96, 94, 86, 0.75) 56%, rgba(83, 83, 78, 0.75) 80%, rgba(160, 180, 190, 1) 100%),
+        url('https://cms.nhl.bamgrid.com/images/photos/344887866/1024x576/cut.png'); */
+
+    background-image: linear-gradient(to bottom, rgba(180, 151, 90, 0.75) 0%, rgba(140, 161, 166, 0.7) 33%, rgba(140, 161, 166, 0.8) 56%, rgba(140, 161, 166, 0.9) 80%, rgba(160, 180, 190, 1) 100%),
+        url('https://media.npr.org/assets/img/2023/06/14/stanleycup.vegas.ap-753e31522b5f6663d82adf229d071253e3750dd4.jpg');
 }
 
 h1 {
@@ -68,9 +78,21 @@ h1 {
         0 5px 10px rgba(0, 0, 0, .25),
         0 10px 10px rgba(0, 0, 0, .2),
         0 20px 20px rgba(0, 0, 0, .15);
+
+    text-shadow: 1px 1px 0 hsl(0, 0%, 100%),
+        2px 2px 0 hsl(0, 0%, 75%),
+        3px 3px 0 hsl(0, 0%, 50%),
+        4px 4px 0 var(--gold-color);
+
+    /* text-shadow: 4px 4px 0px var(--gold-color); */
 }
 
 .tl-wrapper {
+    /* background-color: rgba(140, 161, 166, 40%);
+    box-shadow: var(--low-shadow);
+    border-radius: 8px; */
+
+
     display: grid;
     /* repeat( (# OF COLUMNS), 1fr ) */
     grid-template-columns: repeat(2, 1fr);
@@ -137,7 +159,6 @@ button.button-year-select.active {
     height: auto;
     padding: 10px 0 0 0;
 }
-
 
 /* INFO PAGES -> STICKY NAV BAR & MAJOR EVENTS NAV BAR START */
 
@@ -428,6 +449,65 @@ a.learn-more .button-text {
     text-transform: uppercase;
 }
 
+.tile-wrap {
+    display: flex;
+    justify-content: center;
+}
+
+.tile {
+    height: 64px;
+    width: 128px;
+    background: var(--dark-background-color) linear-gradient(to left, var(--gray-color) 50%, var(--dark-background-color) 50%) repeat scroll 0 0 / 200% 100%;
+    color: #FFF;
+    display: inline-block;
+    margin: 3px;
+    padding: 5px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    transition: background-position 0.1s ease 0s;
+    vertical-align: top;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    box-shadow: var(--low-shadow);
+    border: solid var(--gray-color);
+}
+
+.tile:hover {
+    background-position: 100% 0;
+    color: #FFFFFF;
+    cursor: pointer;
+    -webkit-transform: scale(0.97) perspective(400px);
+    -moz-transform: scale(0.97) perspective(400px);
+    -ms-transform: scale(0.97) perspective(400px);
+    transform: scale(0.97) perspective(400px);
+}
+
+.tile span {
+    bottom: 5px;
+    font-size: 15px;
+    left: 0;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 4px;
+    position: absolute;
+    right: 0;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -441,6 +521,8 @@ a.learn-more .button-text {
 
     .first-page {
         height: 150vh;
+        /* background-image: url('https://cms.nhl.bamgrid.com/images/photos/336862384/2568x1444/cut.jpg');
+        background-size: cover; */
     }
 
     .tl-wrapper {
@@ -454,11 +536,15 @@ a.learn-more .button-text {
         color: var(--gray-color);
         font-weight: normal;
         transition: scale 1.2s ease, color 1.2s ease;
+        transition: all 1.2s ease;
     }
 
     .year-input-container .year-header.active {
         color: var(--gold-color);
         scale: 1.25;
+        border-radius: 8px;
+        padding: 2px;
+        background-color: var(--gray-color);
     }
 
     .year-input-container .time-line {
@@ -512,13 +598,13 @@ a.learn-more .button-text {
         height: 61px;
     }
 
-    .info-wrapper .nav-button {
+    .nav-button {
         font-size: 20px;
         transition: all 0.5s ease;
     }
 
-    .info-wrapper .nav-button:active,
-    .info-wrapper .nav-button:hover,
+    .nav-button:active,
+    .nav-button:hover,
     .major-events-wrapper .major-button:active,
     .major-events-wrapper .major-button:hover {
         outline: 0;
